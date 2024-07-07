@@ -1,0 +1,39 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  width: 33%;
+}
+
+.form-group div {
+  width: 66%;
+}
+
+.max-w-960px {
+  max-width: 960px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

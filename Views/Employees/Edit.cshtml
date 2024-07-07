@@ -1,0 +1,100 @@
+﻿@model SMKaryawan.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class='container'>
+    <h2 class='mt-5 mb-4'>Form Input Data Karyawan</h2>
+    <hr>
+    <div class="row mt-4">
+        <div class="">
+            <form asp-action="Edit" class='row-md-8 max-w-960px'>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="NIK" class="control-label"></label>
+                    <div>
+                        <input asp-for="NIK" class="form-control" placeholder="NIK" />
+                        <span asp-validation-for="NIK" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nama" class="control-label"></label>
+                    <div>
+                        <input asp-for="Nama" class="form-control" placeholder="Nama" />
+                        <span asp-validation-for="Nama" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Alamat" class="control-label"></label>
+                    <div>
+                        <textarea asp-for="Alamat" class="form-control" placeholder="Alamat"></textarea>
+                        <span asp-validation-for="Alamat" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TanggalLahir" class="control-label"></label>
+                    <div>
+                        <input asp-for="TanggalLahir" class="form-control" type="date"  />
+                        <span asp-validation-for="TanggalLahir" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="JenisKelamin" class="control-label"></label>
+                    <div class="d-flex">
+                        <div class="form-check">
+                            <input asp-for="JenisKelamin" class="form-check-input" type="radio" value="Laki-laki" id="jenisKelaminLakiLaki" />
+                            <label class="form-check-label" for="jenisKelaminLakiLaki">
+                                Laki-laki
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input asp-for="JenisKelamin" class="form-check-input" type="radio" value="Perempuan" id="jenisKelaminPerempuan" />
+                            <label class="form-check-label" for="jenisKelaminPerempuan">
+                                Perempuan
+                            </label>
+                        </div>
+                        <span asp-validation-for="JenisKelamin" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Departemen" class="control-label"></label>
+                    <div>
+                        <select asp-for="Departemen" class="form-select">
+                            <option value="">Select</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="IT">IT</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                        <span asp-validation-for="Departemen" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Jabatan" class="control-label"></label>
+                    <div>
+                        <select asp-for="Jabatan" class="form-select">
+                            <option value="">Select</option>
+                            <option value="Head">Head</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Ass. Manager">Ass. Manager</option>
+                        </select>
+                        <span asp-validation-for="Jabatan" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                    <div>
+                        <input type="submit" value="Save" class="btn btn-success  " />
+                        <a asp-action="Index" class="btn btn-danger">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
